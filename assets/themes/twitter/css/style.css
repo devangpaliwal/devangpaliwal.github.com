@@ -69,7 +69,46 @@
   font-size:24px;
 }
 
-
-#discovery-main{
-    display:none !important;
+/*** Custom Styles for the blog ***/
+.card{     
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 3px 13px rgba(0, 0, 0, 0.1);
+    margin: 40px  auto;
+    padding: 50px 20px 50px 20px;
+    width: 464px;
+    overflow: auto;
 }
+.card .picture{
+    border: 12px solid #eee;
+    border-radius: 220px;
+    float: left;
+    height: 130px;
+    width: 130px;
+    margin-left:55px;
+}
+.card .heading-container{
+    float: left;
+    margin-bottom: 20px;
+    margin-left: 13px;
+    margin-top:25px;
+}
+.card .input-block{
+        background-color: #F3F2F0;
+    border-radius: 3px 3px 3px 3px;
+    clear: both;
+    color: #5C5858;
+    font-size: 20px;
+    height: 27px;
+    line-height: 30px;
+    margin-top: 4px;
+    padding: 10px 20px;
+}
+.card .desc{
+    color: #5C5857;
+    font-size: 23px;
+    font-weight: normal;
+    height: 29px;
+    line-height: 29px;
+    width: 215px;
+}
+/******Custom styles for blog ends  ****/
