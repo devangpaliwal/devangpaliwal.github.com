@@ -65,6 +65,11 @@
   color: #FFF; 
 }
 
+.post-title{
+  font-size:24px;
+}
+
+
 #discovery-main{
     display:none !important;
 }
