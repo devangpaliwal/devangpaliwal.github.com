@@ -1,0 +1,9 @@
+img.profile{
+	float:left;
+	margin:0px 20px 10px 0px;
+	border-radius:10px;
+	box-shadow: 5px 7px #ddd;
+}
+.right-cont{
+	margin-left:220px;
+}
