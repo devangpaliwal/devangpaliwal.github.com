@@ -17,7 +17,7 @@ setTimeout(callMeLater,0);
 
 <p>Browser is responsible for so many thigs like loading files, interpreting html, rendering html, executing javascript. Browser uses multithreading to do its tasks in parallel. One thread handles rendering of html, other takes care of downloading js,css and other files. 
 </p>
-
+<!-- more -->
 <p>
 When we ask javascript to build html and add it to the Dom, we may think that it happens synchronously as javascript is single threaded, but wait a second it does not happen synchronously. The task is generating html and appending to html is submitted to browsers event queue, which already has lot of other tasks. Browser keeps on executing the tasks on the event queue and finally renders the newly added element.
 </p>
