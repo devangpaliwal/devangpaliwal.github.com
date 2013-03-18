@@ -6,14 +6,12 @@ tagline:
 {% include JB/setup %}
 
 
-  Sometimes i needed to do it in my code. I wanted to understand how did this solved my issue and why?:
-
-    -------
-    var callMeLater=function(){
-
-    }
-    setTimeout(callMeLater,0);
-    -------    
+Sometimes i needed to do it in my code. I wanted to understand how did this solved my issue and why?:
+<pre>
+var callMeLater=function(){
+}
+setTimeout(callMeLater,0);
+</pre>
 
 
 <p>Browser is responsible for so many thigs like loading files, interpreting html, rendering html, executing javascript. Browser uses multithreading to do its tasks in parallel. One thread handles rendering of html, other takes care of downloading js,css and other files. 
@@ -33,12 +31,12 @@ I encounted this when iw as building a backbone widget, it had lot of subviews i
 
 I added the below piece of code and it worked for me. :)<br> 
 
-    -------
-    var thisOBj=this;
-    setTimeout(function(){
-    thisObj.$el.find(".tinyscrollbar").tinyscrollbar()
-    },0)
-    -------    
+<pre>
+var thisOBj=this;
+setTimeout(function(){
+thisObj.$el.find(".tinyscrollbar").tinyscrollbar()
+},0)
+</pre>    
 
 Simply stated, it allows up to do a certain task only after the current eventloop is finished
 

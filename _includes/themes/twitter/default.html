@@ -51,7 +51,17 @@
       <div class="content">
         {{ content }}
       </div>
+      <div class="comments">
+        {% include JB/comments %}
+      </div>  
       <hr>
+      <ul class="inline">
+        <li><a href="about.html">About</a></li>
+        <li><a href="http://twitter.com/devangpaliwal">Twitter</a></li>
+        <li><a href="http://github.com/devangpaliwal">Github</a></li>
+        <li><a href="mailto:dev.paliwal@gmail.com">Email</a></li>
+      </ul> 
+
       <footer>
         <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
         </p>
