@@ -119,7 +119,7 @@ It allows developer to specify storage type to use while storing data. If no sto
 
 For browsers which does not support Web Storage, we have an option to use Amplify.js or other polyfills listed
 at <a href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills#web-storage-localstorage-and-sessionstorage">Modernizr wiki</a>.
-
+<hr>
 <h4>More Information</h4>
 <ul class="unstyled">
 	<li><a href="http://www.w3.org/TR/webstorage/">WebStorage</a></li>
