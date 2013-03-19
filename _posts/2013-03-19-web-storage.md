@@ -32,13 +32,17 @@ interface Storage {
 </pre>
 
 <h4>Support</h4>
+<p>
 The WebStorage is supported by <span class="label label-info">IE8+</span>, <span class="label label-info">Chrome 5</span>, <span class="label label-info">Firefox 3.5</span>, <span class="label label-info">Safari 4</span>, <span class="label label-info">Opera 10</span>.
+</p>
 
+<h4>Use Cases for Data Storage</h4>
+<p>
 There are two use cases for storing data on the client.
 
 1] Storing data for a sesssion (Session Storage) <br/>
 2] Storing data utill it is removed by develper or user by deleting the data manually. (Local Storage)
-
+</p>
 <h4>Session Storage Object</h4>
 <p>
 This stores data for a session, <span class="label label-inverse">untill the user closes the browser/tab</span>. The data is available till the window is not closed. It allows separate instance of same application to run in different windows independently. The data is lost once we close the browser/window. The data is available only from the page which stored the data.
