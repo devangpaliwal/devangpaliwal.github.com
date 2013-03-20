@@ -5,7 +5,11 @@ tagline:
 ---
 {% include JB/setup %}
 <div class="card">
-    <img src="devang.jpg" class="picture img-rounded"/>
+    <a class="logo" href="/">
+      <span>
+        <img src="devang.jpg" class="picture img-rounded"/>
+       </span> 
+  </a>
     <div class="heading-container">
         <div class="desc"><span class="text-warning">Devang Paliwal</span></div>
         <div class="desc">Frontend Engineer</div>

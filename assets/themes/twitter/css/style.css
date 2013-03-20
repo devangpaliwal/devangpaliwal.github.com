@@ -128,7 +128,20 @@
   color:#3b5998;
 }
 
-
+.card a.logo{
+ 
+  overflow: hidden;
+}
+.card a.logo span {
+  display: block;
+  transition-property: all;
+  transition-duration: .8s;
+}
+.card a.logo:hover img {
+   transition-property: all;
+  transition-duration: .8s;
+  border-color:#B2B2B2;
+}
 
 
 /******Custom styles for blog ends  ****/
