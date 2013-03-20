@@ -71,7 +71,7 @@
 
 /*** Custom Styles for the blog ***/
 .card{     
-    border-radius: 3px 3px 3px 3px;
+    border-radius: 200px;
     box-shadow: 0 3px 13px rgba(0, 0, 0, 0.1);
     margin: 40px  auto;
     padding: 50px 20px 50px 20px;
@@ -114,4 +114,21 @@
 .post-info{
   margin:20px 0px;
 }
+
+.post-info a.post-title{
+    color: #0088CC;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    transition-property: all;
+}
+.post-info a.post-title:hover{
+    color: #3b5998;
+}
+.post-info a{
+  color:#3b5998;
+}
+
+
+
+
 /******Custom styles for blog ends  ****/
