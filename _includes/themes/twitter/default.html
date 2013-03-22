@@ -37,10 +37,18 @@
   </head>
 
   <body>
-    <div class="navbar">
+    <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-narrow">
           <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
+
+          <ul class="nav">
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="http://twitter.com/devangpaliwal">Twitter</a></li>
+              <li><a href="http://github.com/devangpaliwal">Github</a></li>
+              <li><a href="mailto:dev.paliwal@gmail.com">Email</a></li>
+          </ul>
           <!--<ul class="nav">
             {% assign pages_list = site.pages %}
             {% assign group = 'navigation' %}
@@ -59,14 +67,8 @@
       <!--  {% include JB/comments %} -->
       </div>  
       <hr>
-      <ul class="inline">
-        <li><a href="about.html">About</a></li>
-        <li><a href="http://twitter.com/devangpaliwal">Twitter</a></li>
-        <li><a href="http://github.com/devangpaliwal">Github</a></li>
-        <li><a href="mailto:dev.paliwal@gmail.com">Email</a></li>
-      </ul> 
-
-      <footer>
+     
+   <footer>
         <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
         </p>
       </footer>
