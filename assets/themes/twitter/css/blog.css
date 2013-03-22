@@ -7,3 +7,15 @@ img.profile{
 .right-cont{
 	margin-left:220px;
 }
+
+.post-head{
+	padding:20px; 
+	background:#eee;	
+	border-radius:5px;
+}
+
+.read-more{
+	margin-left:220px;
+	color:white;
+}
+

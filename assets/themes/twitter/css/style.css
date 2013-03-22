@@ -124,9 +124,6 @@
 .post-info a.post-title:hover{
     color: #3b5998;
 }
-.post-info a{
-  color:#3b5998;
-}
 
 .card a.logo{
  
@@ -143,5 +140,8 @@
   border-color:#B2B2B2;
 }
 
+body{
+  font-family: 'Open Sans', Arial, sans-serif;
+}
 
 /******Custom styles for blog ends  ****/
