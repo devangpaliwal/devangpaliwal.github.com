@@ -76,5 +76,38 @@
     </div>
 
     {% include JB/analytics %}
+    <style>
+      .cpt{
+        text-transform: uppercase;
+        font-size:60px;
+        margin-top:50px;
+      }
+      .cpt.top{
+        margin-left:5%;
+      }
+      .cpt.center{
+        text-align:center;
+      }
+      .cpt span{
+        display: inline-block;
+      }
+
+      .char1,.char3,.char5,.char7,.char9,.char11,.char13,.char15,.char17,.char19,.char21{
+          -webkit-transition: all .4s ease-out;
+      }
+      .char2,.char4,.char6,.char8,.char10,.char12,.char14,.char16,.char18,.char20,.char22{
+        -webkit-transition: all .4s ease-out;
+      }
+      .cpt span:hover{
+        color:#0088CC;
+        -webkit-transform: rotate(360deg) scale(1.5);
+
+      }
+    </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://letteringjs.com/js/jquery.lettering-0.6.1.min.js"></script>
+    <script>
+      $(".cpt").lettering();
+    </script>
   </body>
 </html>

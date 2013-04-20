@@ -4,6 +4,14 @@ title:
 tagline:
 ---
 {% include JB/setup %}
+
+
+<div class="cpt top">Concepts &nbsp; Practices</div>
+<div class="cpt center">&amp;</div>
+<div class="cpt center">Tips</div>
+
+
+
 <div class="card">
     <a class="logo" href="/">
       <span>
