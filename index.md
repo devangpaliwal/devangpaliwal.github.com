@@ -40,7 +40,11 @@ tagline:
   </br>
   <div class="clearfix"> 
       <div class="pull-left" style="width:200px;height:200px;">
-          <img style="border-radius:140px;" src="/images/javascript.png">  
+          {% if !post.image %}
+              <img style="border-radius:140px;" src="/images/{{post.image }}.png">  
+          {% else %}   
+            <img style="border-radius:140px;" src="/images/javascript.png"> 
+          {% endif %}   
       </div>
       <div class="pull-right" style="width:480px;">  
       {{ post.content | split: '<!-- more -->' | first }} 

@@ -4,6 +4,7 @@ title: "Crossbrowser image rotation"
 description: ""
 category: 
 tags: []
+image: "css"
 ---
 {% include JB/setup %}
 
