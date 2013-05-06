@@ -39,9 +39,9 @@ tagline:
   </li>
   </br>
   <div class="clearfix"> 
-      <div class="pull-left" style="width:200px;height:200px;">
+      <div class="pull-left text-center" style="width:200px;height:200px;text-align:center;">
           {% if !post.image %}
-              <img style="border-radius:140px;" src="/images/{{post.image }}.png">  
+              <img style="border-radius:140px;" alt="post.image" src="/images/{{post.image }}.png">  
           {% else %}   
             <img style="border-radius:140px;" src="/images/javascript.png"> 
           {% endif %}   

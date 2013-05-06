@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "&lt;meta charset='utf 8'&gt; what the fuss?"
+title: "meta charset='utf 8' what the fuss?"
 description: ""
 category: 
 tags: []
+image: "html"
 ---
 {% include JB/setup %}
 <p>
