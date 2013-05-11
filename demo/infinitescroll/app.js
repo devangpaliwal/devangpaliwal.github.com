@@ -1,33 +1,60 @@
-var TweetCollection = Backbone.Collection.extend({
-	page:1,
-	query:"sachin",
+var DataCollection = Backbone.Collection.extend({
 	url:function(){
-		var u='http://search.twitter.com/search.json?q=' + this.query + '&page=' + this.page + '&callback=?';
-		console.log(u);
-		return 'http://search.twitter.com/search.json?q=' + this.query + '&page=' + this.page + '&callback=?'
+		return './result.json';
+	},
+	parse:function(resp,xhr){
+		return resp.results;
 	}
 });
 
-var TweetsContainerView=Backbone.View.extend({
-	id:"twitterContainer",
+var ItemView = Backbone.View.extend({
+	className:"item",
+	render:function(){
+		this.$el.html(this.model.get("text"));
+		return this;
+	}
+})
+
+var DataContainerView=Backbone.View.extend({
+	subViewArray:[],
+	fetching:false,
+	id:"dataContainer",
+	events:{
+		"scroll":"scrollHandler"
+	},
 	initialize:function(){
-		this.collection = new TweetCollection();
+		this.collection = new DataCollection();
 		this.collection.on("reset",this.populateTweets,this);
 		this.collection.fetch();
-		this.collection.reset(this.getResults());
 		this.render();
 	},
-	getResults:function(){
-		var json='{"completed_in":0.055,"max_id":332931624553570304,"max_id_str":"332931624553570304","next_page":"?page=2&max_id=332931624553570304&q=sachin","page":1,"query":"sachin","refresh_url":"?since_id=332931624553570304&q=sachin","results":[{"created_at":"Fri, 10 May 2013 18:54:19 +0000","from_user":"mathan_k35","from_user_id":395580719,"from_user_id_str":"395580719","from_user_name":"mathan kri","geo":null,"id":332931624553570304,"id_str":"332931624553570304","iso_language_code":"en","metadata":{"result_type":"recent"},"profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/3570112655\/c222739cfa3a14af13f1838a7a7820a0_normal.jpeg","profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/3570112655\/c222739cfa3a14af13f1838a7a7820a0_normal.jpeg","source":"&lt;a href=&quot;http:\/\/twitter.com\/&quot;&gt;web&lt;\/a&gt;","text":"@ImRaina u r SACHIN in T20. 100s are not a matter 2 us Raina :)","to_user":"ImRaina","to_user_id":121044171,"to_user_id_str":"121044171","to_user_name":"Suresh Raina","in_reply_to_status_id":332330273733763072,"in_reply_to_status_id_str":"332330273733763072"},{"created_at":"Fri, 10 May 2013 18:53:46 +0000","from_user":"iil_nirajshinde","from_user_id":170623010,"from_user_id_str":"170623010","from_user_name":"Niraj ","geo":null,"id":332931485852135424,"id_str":"332931485852135424","iso_language_code":"en","metadata":{"result_type":"recent"},"profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/3585311866\/8b4dc741c52428992a2a0ef05ad102c6_normal.jpeg","profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/3585311866\/8b4dc741c52428992a2a0ef05ad102c6_normal.jpeg","source":"&lt;a href=&quot;http:\/\/blackberry.com\/twitter&quot;&gt;Twitter for BlackBerry\u00ae&lt;\/a&gt;","text":"@vikrantgupta73 #Bansal #Chandigarh #justsaying go get it ! Like sachin but sir congress itna level mat down karo apna!#CongressSurprises","to_user":"vikrantgupta73","to_user_id":135110894,"to_user_id_str":"135110894","to_user_name":"Vikrant Gupta AajTak","in_reply_to_status_id":332926231353909248,"in_reply_to_status_id_str":"332926231353909248"},{"created_at":"Fri, 10 May 2013 18:53:31 +0000","from_user":"Champ_Sachin","from_user_id":252005182,"from_user_id_str":"252005182","from_user_name":"Sachin Fan Club","geo":null,"id":332931423784804353,"id_str":"332931423784804353","iso_language_code":"en","metadata":{"result_type":"recent"},"profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/1243951736\/sachin_tendulkar_normal.jpg","profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/1243951736\/sachin_tendulkar_normal.jpg","source":"&lt;a href=&quot;http:\/\/twitterfeed.com&quot;&gt;twitterfeed&lt;\/a&gt;","text":"Pacemen the key as MI look to shut Pune http:\/\/t.co\/3ikXI8h4YO"},{"created_at":"Fri, 10 May 2013 18:53:31 +0000","from_user":"Champ_Sachin","from_user_id":252005182,"from_user_id_str":"252005182","from_user_name":"Sachin Fan Club","geo":null,"id":332931422669139968,"id_str":"332931422669139968","iso_language_code":"en","metadata":{"result_type":"recent"},"profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/1243951736\/sachin_tendulkar_normal.jpg","profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/1243951736\/sachin_tendulkar_normal.jpg","source":"&lt;a href=&quot;http:\/\/twitterfeed.com&quot;&gt;twitterfeed&lt;\/a&gt;","text":"VVS Laxman finds it tough to resist the temptation of playing again http:\/\/t.co\/PZAWfw9EA3"},{"created_at":"Fri, 10 May 2013 18:53:30 +0000","from_user":"Champ_Sachin","from_user_id":252005182,"from_user_id_str":"252005182","from_user_name":"Sachin Fan Club","geo":null,"id":332931420748136448,"id_str":"332931420748136448","iso_language_code":"en","metadata":{"result_type":"recent"},"profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/1243951736\/sachin_tendulkar_normal.jpg","profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/1243951736\/sachin_tendulkar_normal.jpg","source":"&lt;a href=&quot;http:\/\/twitterfeed.com&quot;&gt;twitterfeed&lt;\/a&gt;","text":"Sachin Tendulkars innings against Kolkata Knight Riders was pleasing: John ... http:\/\/t.co\/0zYkw1ntKs"},{"created_at":"Fri, 10 May 2013 18:53:30 +0000","from_user":"Champ_Sachin","from_user_id":252005182,"from_user_id_str":"252005182","from_user_name":"Sachin Fan Club","geo":null,"id":332931419628261376,"id_str":"332931419628261376","iso_language_code":"en","metadata":{"result_type":"recent"},"profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/1243951736\/sachin_tendulkar_normal.jpg","profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/1243951736\/sachin_tendulkar_normal.jpg","source":"&lt;a href=&quot;http:\/\/twitterfeed.com&quot;&gt;twitterfeed&lt;\/a&gt;","text":"Only Sachin Tendulkar can decide on his retirement: Sanath Jayasuriya http:\/\/t.co\/acZq7iFTb4"},{"created_at":"Fri, 10 May 2013 18:53:21 +0000","from_user":"nks727","from_user_id":1410899766,"from_user_id_str":"1410899766","from_user_name":"srivatsan narayanan","geo":null,"id":332931379211956225,"id_str":"332931379211956225","iso_language_code":"en","metadata":{"result_type":"recent"},"profile_image_url":"http:\/\/a0.twimg.com\/sticky\/default_profile_images\/default_profile_3_normal.png","profile_image_url_https":"https:\/\/si0.twimg.com\/sticky\/default_profile_images\/default_profile_3_normal.png","source":"&lt;a href=&quot;http:\/\/twitter.com\/&quot;&gt;web&lt;\/a&gt;","text":"kolhlis  sixes   in the v of umesh yadav reminds  me of sachin   in 1998 against kasper and flemming"},{"created_at":"Fri, 10 May 2013 18:52:24 +0000","from_user":"Sachin_Lohana","from_user_id":148052937,"from_user_id_str":"148052937","from_user_name":"\u0633\u0686\u0646","geo":null,"id":332931141608808448,"id_str":"332931141608808448","iso_language_code":"en","metadata":{"result_type":"recent"},"profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/3464018803\/3c559e40cecb1350e3be17383f427314_normal.jpeg","profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/3464018803\/3c559e40cecb1350e3be17383f427314_normal.jpeg","source":"&lt;a href=&quot;http:\/\/twitter.com\/&quot;&gt;web&lt;\/a&gt;","text":"RT @Fact: Music is powerful enough to change a persons perception of the world."},{"created_at":"Fri, 10 May 2013 18:52:14 +0000","from_user":"Sachin_Lohana","from_user_id":148052937,"from_user_id_str":"148052937","from_user_name":"\u0633\u0686\u0646","geo":{"coordinates":[0.0,0.0],"type":"Point"},"id":332931098675908608,"id_str":"332931098675908608","iso_language_code":"en","metadata":{"result_type":"recent"},"place":{"full_name":"Toronto","id":"8f9664a8ccd89e5c","type":"CITY"},"profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/3464018803\/3c559e40cecb1350e3be17383f427314_normal.jpeg","profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/3464018803\/3c559e40cecb1350e3be17383f427314_normal.jpeg","source":"&lt;a href=&quot;http:\/\/twitter.com\/&quot;&gt;web&lt;\/a&gt;","text":"I dont think Ill ever be happy with myself #tbh"},{"created_at":"Fri, 10 May 2013 18:51:26 +0000","from_user":"WhyGrow_Up","from_user_id":17711814,"from_user_id_str":"17711814","from_user_name":"M M","geo":null,"id":332930897865228289,"id_str":"332930897865228289","iso_language_code":"en","metadata":{"result_type":"recent"},"profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/3618813952\/a1bd49ba2bbb6d63089587349c3008a2_normal.jpeg","profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/3618813952\/a1bd49ba2bbb6d63089587349c3008a2_normal.jpeg","source":"&lt;a href=&quot;http:\/\/twitter.com\/download\/iphone&quot;&gt;Twitter for iPhone&lt;\/a&gt;","text":"So what exactly is wrong with the statement? \u201c@SnehhK: According to @Supernb86, Sir Alex Ferguson is greater than Sachin Tendulkar. *cough*\u201d","to_user":"SnehhK","to_user_id":101208950,"to_user_id_str":"101208950","to_user_name":"Sneh K","in_reply_to_status_id":332914612494282752,"in_reply_to_status_id_str":"332914612494282752"},{"created_at":"Fri, 10 May 2013 18:51:18 +0000","from_user":"Sachin_Lohana","from_user_id":148052937,"from_user_id_str":"148052937","from_user_name":"\u0633\u0686\u0646","geo":null,"id":332930867129360385,"id_str":"332930867129360385","iso_language_code":"en","metadata":{"result_type":"recent"},"profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/3464018803\/3c559e40cecb1350e3be17383f427314_normal.jpeg","profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/3464018803\/3c559e40cecb1350e3be17383f427314_normal.jpeg","source":"&lt;a href=&quot;http:\/\/twitter.com\/&quot;&gt;web&lt;\/a&gt;","text":"RT @Wize_Quotes: Some people are like clouds. When they disappear, its a brighter day."},{"created_at":"Fri, 10 May 2013 18:51:06 +0000","from_user":"sachin_430","from_user_id":1180754178,"from_user_id_str":"1180754178","from_user_name":"Sachin Chandarana","geo":null,"id":332930813362585600,"id_str":"332930813362585600","iso_language_code":"en","metadata":{"result_type":"recent"},"profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/3582840005\/459a091de5e1949272c978788ed1886b_normal.jpeg","profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/3582840005\/459a091de5e1949272c978788ed1886b_normal.jpeg","source":"&lt;a href=&quot;http:\/\/twitter.com\/download\/android&quot;&gt;Twitter for Android&lt;\/a&gt;","text":"Revision best pay off"},{"created_at":"Fri, 10 May 2013 18:50:07 +0000","from_user":"addypunter","from_user_id":59839063,"from_user_id_str":"59839063","from_user_name":"Aditya Kulkarni","geo":null,"id":332930569396707328,"id_str":"332930569396707328","iso_language_code":"sv","metadata":{"result_type":"recent"},"profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/2973710118\/af97b1ba1dd2db64d01e060c22d6eea5_normal.jpeg","profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/2973710118\/af97b1ba1dd2db64d01e060c22d6eea5_normal.jpeg","source":"&lt;a href=&quot;http:\/\/www.tweetdeck.com&quot;&gt;TweetDeck&lt;\/a&gt;","text":"@anoopsugur Haag irvaga Neen hege Sachin goskra MI fan\/life yella ille iddu csk support mado tams kina diff?","to_user":"anoopsugur","to_user_id":52649859,"to_user_id_str":"52649859","to_user_name":"Anoop Sugur","in_reply_to_status_id":332929901629952000,"in_reply_to_status_id_str":"332929901629952000"},{"created_at":"Fri, 10 May 2013 18:50:05 +0000","from_user":"dianamoei","from_user_id":877258898,"from_user_id_str":"877258898","from_user_name":"\u2764Diana Iglesias \u2764 :*","geo":null,"id":332930560324423681,"id_str":"332930560324423681","iso_language_code":"en","metadata":{"result_type":"recent"},"profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/3607627882\/b944484a37258a71fc2f4a7a918eb1f2_normal.jpeg","profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/3607627882\/b944484a37258a71fc2f4a7a918eb1f2_normal.jpeg","source":"&lt;a href=&quot;http:\/\/twitter.com\/download\/android&quot;&gt;Twitter for Android&lt;\/a&gt;","text":"@darshika_305 Ok now i hate u morrree lol Noooo i am confused between Sachin n everybody lol xD","to_user":"darshika_305","to_user_id":113331596,"to_user_id_str":"113331596","to_user_name":"EnriquettesLoveYouEI","in_reply_to_status_id":332930114226618369,"in_reply_to_status_id_str":"332930114226618369"},{"created_at":"Fri, 10 May 2013 18:46:48 +0000","from_user":"ItzVmc","from_user_id":419643993,"from_user_id_str":"419643993","from_user_name":"VAMSI","geo":null,"id":332929734004580355,"id_str":"332929734004580355","iso_language_code":"en","metadata":{"result_type":"recent"},"profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/3503073882\/34ca633d3c674e048686dd7b1a3aa4e9_normal.jpeg","profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/3503073882\/34ca633d3c674e048686dd7b1a3aa4e9_normal.jpeg","source":"&lt;a href=&quot;http:\/\/twitter.com\/&quot;&gt;web&lt;\/a&gt;","text":"the 3 most popular cars of India....Sachin Tendulkars Ferrari 360, Salman Khans Landcruiser and Ram Charans Aston Vantage...#justsaying"}],"results_per_page":15,"since_id":0,"since_id_str":"0"}';
-		return JSON.parse(json).results;
+	scrollHandler:function(){
+		//console.log("this.$el.scrollTop() ",this.$el.scrollTop(),"this.$el[0].scrollHeight",this.$el[0].scrollHeight);
+		if((this.$el.scrollTop() + this.$el.height() > this.$el[0].scrollHeight-100)){
+			if(!this.fetching){
+				this.fetching=true;
+				this.loadMore();	
+			}
+		}	
 	},
-	render:function(){
-
+	loadMore:function(){
+		var thisObj=this;
+		this.collection.fetch();
+		console.log("Adding more ----");
 	},
-	populateTweets:function(){
+	populateTweets:function(coll){
+		var thisObj=this;
+		coll.each(function(model){
+			var itemView=new ItemView({'model':model});
+			thisObj.subViewArray.push(itemView);
+			thisObj.$el.append(itemView.$el);
+			itemView.render();
+			thisObj.fetching=false;	
+		})		
+		
 		
 	}
 });
 
-var tweetContView=new TweetsContainerView();
-$("body").append(tweetContView.$el);
+var dataContView=new DataContainerView();
+$("body").append(dataContView.$el);
