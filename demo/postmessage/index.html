@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Post Message</title>
+<style>
+	#mainCont{
+		
+		margin:0 auto;
+		text-align: center;
+	}
+	#dataContainer{
+		overflow:scroll;
+		width:400px;
+		margin:0 auto;
+		margin-top:40px;
+	}
+
+	
+	.pageTitle{
+		background-color: #000;
+		color:#fff;
+		width:100%;
+		padding:10px;
+	}
+	button{
+		height:50px;
+		width:100px;
+		display: block;
+		margin:0 auto;
+		margin-top:50px;
+
+	}
+	
+</style>
+</head>
+<body>
+	<div id="mainCont">
+		<h1 class="pageTitle">Window.postMessage Demo</h1>
+	</div>
+	<p id="dataContainer"> On click of the button it will open up a window and send a message across to the newly opened window. <br><br>That window will change its title and color when it recieves the message.
+	<button onclick="sendMessage();">Click Me</button>
+	</p>
+	
+	<script>
+		function sendMessage(){
+			var window2=window.open("/demo/postmessage/second.html","myWindow");
+			setTimeout(function(){
+				window2.postMessage({"bgcolor":"#ED9494","message":"Pink shade is Fun!"},"http://localhost:4000");	
+			},1000)
+		}
+	</script>
+</body>
+</html>

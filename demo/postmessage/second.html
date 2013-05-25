@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Post Message</title>
+<style>
+	#mainCont{
+		
+		margin:0 auto;
+		text-align: center;
+	}
+	#dataContainer{
+		overflow:scroll;
+		width:400px;
+		margin:0 auto;
+		margin-top:40px;
+	}
+
+	
+	.pageTitle{
+		background-color: #000;
+		color:#fff;
+		width:100%;
+		padding:10px;
+	}
+	button{
+		height:50px;
+		width:100px;
+		display: block;
+		margin:0 auto;
+		margin-top:50px;
+
+	}
+	
+</style>
+</head>
+<body>
+	<div id="mainCont">
+		<h1 class="pageTitle">Window.postMessage Demo</h1>
+	</div>
+
+	<p id="dataContainer">
+	I am painted in a #ED9494 Shade which i received from window 1 :) 
+	</p>
+	<script>
+		window.addEventListener("message",function(e){
+			alert("Voila! We recieved message ---- "+e.data.message+"--- and shade --- "+e.data.bgcolor+"--- from other window");
+			document.title=" Recieved "+e.data.message+" from window 1";
+			document.body.style.backgroundColor=e.data.bgcolor;
+		});
+	</script>
+</body>
+</html>
