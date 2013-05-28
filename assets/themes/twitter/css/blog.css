@@ -19,3 +19,23 @@ img.profile{
 	color:white;
 }
 
+
+a.demo{
+  height:50px;
+  width:120px;
+  background-color:#81C3D1;
+  display:table-cell;
+  border-radius:10px;
+  text-align:center;
+  vertical-align:middle;
+  color:black;
+  font-weight:bold;
+  font-size:1.2em;
+  text-decoration:none;
+  box-shadow:3px 5px 5px #888;
+  
+}
+a.demo:hover{
+  color:white;
+  box-shadow:3px 5px 5px #fff;
+}

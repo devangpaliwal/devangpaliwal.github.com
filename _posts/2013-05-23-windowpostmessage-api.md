@@ -63,6 +63,9 @@ if(e.origin == "devangpaliwal.com"){
 <h4>Browser Support</h4>
 <p><code>IE8+</code>, <code>FF</code>, <code>Chrome</code>, <code>Opera</code> and <code>Safari</code></p>
 <br>
+<a class="demo" href="/demos/postmessage/index.html" target="_blank">Demo</a>
+
+<br>
 <h4>More Information</h4>
 <ul class="unstyled">
 	<li><a href="http://msdn.microsoft.com/en-us/library/ie/cc197015(v=vs.85).aspx">postMessage MSDN</a></li>
