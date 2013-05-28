@@ -15,6 +15,6 @@ tagline:
 
 <h2>Demos</h2>
 <ol>
-  <li><a href="/demos/postmessage/index.html">Cross window communication</a></li>
-  <li><a href="/demos/infinitescroll/index.html">Infinite Scroll using backbone.js</a></li>
+  <li><a href="/demo/postmessage/index.html">Cross window communication</a></li>
+  <li><a href="/demo/infinitescroll/index.html">Infinite Scroll using backbone.js</a></li>
 </ol>
