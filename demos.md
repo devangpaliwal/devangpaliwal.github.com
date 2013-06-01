@@ -17,4 +17,5 @@ tagline:
 <ol>
   <li><a href="/demo/postmessage/index.html">Cross window communication</a></li>
   <li><a href="/demo/infinitescroll/index.html">Infinite Scroll using backbone.js</a></li>
+  <li><a href="/demo/marionette/index.html">Searching Videos using Backbone Marionette</a></li>
 </ol>

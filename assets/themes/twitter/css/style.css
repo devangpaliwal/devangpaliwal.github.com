@@ -135,7 +135,7 @@
   transition-duration: .8s;
 }
 .card a.logo:hover img {
-   transition-property: all;
+  transition-property: all;
   transition-duration: .8s;
   border-color:#B2B2B2;
 }
