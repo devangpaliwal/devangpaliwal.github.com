@@ -23,7 +23,6 @@ window.onbeforeunload=function(){
 </pre>
 
 <p>This code will show the message in the modal box presented by the browser.</p>
-
 <h4>What is the problem on IE?</h4>
 <p> Suppose we have a event handler attached for onbeforeunload event and we also have links on our page which looks something like the code below.</p>
 <pre>
