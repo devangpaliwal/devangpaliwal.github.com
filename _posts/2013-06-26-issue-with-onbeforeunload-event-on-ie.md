@@ -16,40 +16,30 @@ tags: []
 </p>
 <br>
 <h4>How to we assign a handler to onbeforeunload event?</h4>
-<p>
-Attaching an event handler to the onbeforeunload event is dead simple. Here's the code.
-</p>
+<p> Attaching an event handler to the onbeforeunload event is dead simple. Here's the code. </p>
 <pre>
 window.onbeforeunload=function(){
 	return "Make sure you have saved everything before leaving this page.";
 }
 </pre>
 
-<p>
-This code will show the message in the modal box presented by the browser.</p>
+<p>This code will show the message in the modal box presented by the browser.</p>
 <br><br>
 <h4>What is the problem on IE?</h4>
-<p>
-Suppose we have a event handler attached for onbeforeunload event and we also have links on our page which looks something like the code below.
-</p>
-
+<p> Suppose we have a event handler attached for onbeforeunload event and we also have links on our page which looks something like the code below.</p>
 <pre>
 &lt;a href="javascript:void(0)" onclick="save();"&gt;Save&lt;/a&gt;
 </pre>
 
-<p>
-IE invokes the onbeforeunload handler before even executing our code in save function. Its a bit wired as this does not happen in other browsers like Chrome,FF,Safari.
-</p>
-<br><br>
+<p>IE invokes the onbeforeunload handler before even executing our code in save function. Its a bit wired as this does not happen in other browsers like Chrome,FF,Safari. </p>
+<br/><br/>
 <h4>Solution</h4>
 
-Workaround to this problem can be change the a tags to span tags and make your code look like this.
+<p>Workaround to this problem can be change the a tags to span tags and make your code look like this.</p>
 <pre>
 	&lt;span class="linkposer" onclick="save();"&gt;Save&lt;/span&gt;
 </pre>
-<p>
-We can style our class that it looks likes a Link with text-decoration, color and cursor.
-</p>
+<p> We can style our class that it looks likes a Link with text-decoration, color and cursor.</p>
 <br>
 <h4>More Information</h4>
 
