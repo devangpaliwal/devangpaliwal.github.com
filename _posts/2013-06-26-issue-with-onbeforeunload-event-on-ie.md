@@ -25,18 +25,20 @@ window.onbeforeunload=function(){
 <p>This code will show the message in the modal box presented by the browser.</p>
 <h4>What is the problem on IE?</h4>
 <p> Suppose we have a event handler attached for onbeforeunload event and we also have links on our page which looks something like the code below.</p>
-<pre>
+<!-- <pre>
 &lt;a href="javascript:void(0)" onclick="save();"&gt;Save&lt;/a&gt;
 </pre>
-
+-->
 &#x20;<p>IE invokes the onbeforeunload handler before even executing our code in save function. Its a bit wired as this does not happen in other browsers like Chrome,FF,Safari. </p>
 <br/><br/>
 <h4>Solution</h4>
 
 <p>Workaround to this problem can be change the a tags to span tags and make your code look like this.</p>
+<!-- 
 <pre>
 &lt;span class="linkposer" onclick="save();"&gt;Save&lt;/span&gt;
 </pre>
+-->
 <p> We can style our class that it looks likes a Link with text-decoration, color and cursor.</p>
 <br/>
 <h4>More Information</h4>
