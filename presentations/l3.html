@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">	
+<head>
+	<meta charset="utf-8">
+	<title>Magic Wand for Large JS Apps</title>
+	<link rel="stylesheet" href="css/reveal.min.css">
+	<link rel="stylesheet" href="css/theme/default.css" id="theme">	
+	<link rel="stylesheet" href="css/print/pdf.css" type="text/css" media="print">
+</head>
+
+<body>
+	<!-- Wrap the entire slide show in a div using the "reveal" class. -->
+	<div class="reveal">
+		<!-- Wrap all slides in a single "slides" class -->
+		<div class="slides">
+
+			<!-- ALL SLIDES GO HERE -->
+			<!-- Each section element contains an individual slide -->
+
+
+			<section id="1">
+				<h1>Magic Wand  </h1>
+				<h1>for</h1>
+				<h1>Large JS Apps</h1>
+
+			</section>
+
+			<section id="2">
+				<h1>Large JS App ??</h1><br>
+			</section>
+
+
+			<section id="2">
+				<h2>proportional to code size </h2>
+				<h2 style="color:red;">x</h2>
+				
+			</section>
+
+			<section id="3">
+				<h1>Non - trivial Applications</h1>
+				<p> applications requiring development efforts to maintain it</p>
+			</section>
+
+			<section id="4">
+				<img style="-webkit-filter:blur(2px);" src="../images/youtube.png">
+			</section>
+
+			<section id="5">
+				<img style="-webkit-filter:blur(2px);" src="../images/gmail.png">
+			</section>
+
+			<section id="6">
+				<img style="-webkit-filter:blur(2px);" src="../images/google-calender.png">
+			</section>
+			
+			<section id="7">
+				<h1>Components </h1>
+				<h1>of Large JS Apps</h1>
+				<p>Library & Toolkit, Widgets, Models, Views, Controllers, Widgets, Modules</p>
+			</section>
+
+			<section id="8">
+				<h1>Advantages</h1>
+				<p>Well Defined, Separate Concerns, Responsibility Driven etc</p>
+				
+			</section>
+
+			<section id="9">
+				<h1>Problem ??</h1>
+				<p><p>Reusability, Testability, Independent Modeules, Tight-Coupling, Self contained</p></p>
+			</section>
+
+
+			<section id="10">
+				<h2><span style="padding-right:20px;">Coupling</span> <span style="font-size:130px;padding-right:100px;">&prop;</span> <span >1</span></h2>
+				<h2 style="margin-left:45%;text-decoration:overline;">reusability</h2>
+			</section>
+
+			<section id="11">
+				<blockquote>The secret to building large apps is never build large apps. Break your applications into small pieces. Then, assemble those testable, bite-sized pieces into your big application.</blockquote>
+				<p> - Justin Meyer</p>
+				
+			</section>
+
+			<section id="12">
+				<blockquote>The more tied components are to each other, the less reusable they will be, and the more difficult it becomes to make changes to one without accidentally affecting another.</blockquote>
+				<p> - Rebecca Murphey</p>
+			</section>
+
+			<section id="13">
+				<h1>How to do it?</h1>
+				<h2>Thoughts ?</h2>
+			</section>
+
+			<section id="14">
+				<h1>Solution/Approach</h1>
+				<h2> Module </h2>
+				<h2> Facade </h2>
+				<h2> Mediator </h2>
+			</section>
+
+			<section id="15">
+				<h1>Module ?</h1>
+				<p>Reusable, Independent, Self-contained, No Knowledge of System</p>
+			</section>
+
+			<section id="16">
+				<h1>Facilitates loose coupling and Removes code dependency</h1>
+			</section>
+
+			<section id="17">
+				<h1>JS : Module Pattern</h1>
+				<p>Helps with Privacy and Code organisation.</p>
+			</section>
+
+			<section id="18">
+				<h1>JS : Facade Pattern</h1>
+				<p>Hides complexity, exposes simple interface</p>
+			</section>
+
+			<section id="19">
+				<h1>JS : Mediator Pattern</h1>
+				<p>Air traffic control system</p>
+			</section>
+
+			<section id="20">
+				<h1>Mediator VS Pub/Sub </h1>
+			</section>
+
+			<section id="21">
+				<h1>Thanks & Questions</h3>
+			</section>
+
+			</div>
+	</div>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.min.js"></script>
+
+	<script>
+		// Required, even if empty.
+		Reveal.initialize({
+			dependencies: [
+				{ src: 'plugin/notes/notes.js', async: true }
+			]
+		});
+	</script>
+</body>
+</html>
