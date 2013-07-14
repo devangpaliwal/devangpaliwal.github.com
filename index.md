@@ -21,7 +21,7 @@ tagline:
     <div class="heading-container">
         <div class="desc"><span class="text-warning">Devang Paliwal</span></div>
         <div class="desc">Frontend Engineer</div>
-        <div class="desc"><a target="_blank" href="http://next.mygola.com">Mygola Inc</a></div>
+        <div class="desc"><a target="_blank" href="http://mygola.com">Mygola Inc</a></div>
     </div>  
 </div>
 
